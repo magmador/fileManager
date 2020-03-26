@@ -21,7 +21,6 @@ char** direcory_change( WINDOW *actualWnd, char *fileName, char **textBuffer, in
     struct stat entryInfo;
     strcat( dirPath, fileName );
     stat( dirPath, &entryInfo );
-  //  wprintw( actualWnd, "%d", entryInfo.st_mode );
     if( entryInfo.st_mode & S_IXUSR )
     {
       if (fork() == 0)
